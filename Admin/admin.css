@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Roboto+Slab&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'EB Garamond', serif;
+}
+
+nav {
+  height: 6vw;
+  width: 100%;
+  display: flex;
+  background: rgba(255, 255, 255, 0.47);
+  /* justify-content: center; */
+  align-items: center;
+  padding: 0 5vw;
+}
+
+.main-logo {
+  max-height: 100%;
+}
+
+.main-logo img {
+  max-height: 100%;
+  width: 13.73vw;
+}
+
+.profile-icon {
+  font-size: 3vw;
+  color: chocolate;
+}
+
+.profile-icon:hover {
+  color: cadetblue;
+}
+
+.profile-tab {
+  margin: 0 0 0 auto;
+  height: 100%;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+}
+
+.profile-menu {
+  position: absolute;
+  width: fit-content;
+  margin-right: 5vw;
+  display: flex;
+  flex-direction: column;
+  padding: 1vw 0;
+  border-radius: 2vw;
+  border-top-right-radius: 0;
+  top: 6vw;
+  right: 0;
+  background-color: darkseagreen;
+  overflow: hidden;
+}
+
+.dropdown .link {
+  padding: 0.75vw 2vw;
+  font-size: 1.5vw;
+}
+
+.dropdown .link:hover {
+  background-color: blue;
+  color: white;
+}
+
+.welcome {
+  height: 20vw;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome h1 {
+  font-size: 5vw;
+  color: chocolate;
+  font-weight: 700;
+  text-shadow: 0 0.5vw rgba(255, 255, 0, 0.547);
+}
+
+.admin-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 13vw;
+}
+
+.products,
+.orders,
+.feedbacks {
+  padding: 5vw;
+  border: gold;
+  border-width: 0.4vw;
+  border-style: solid;
+  border-radius: 32%;
+  box-shadow: 0.5vw 0.5vw rgb(121 119 119);
+}
+
+.products:hover,
+.orders:hover,
+.feedbacks:hover {
+  background-color: orange;
+}
+
+.form-icon {
+  font-size: 8vw;
+}
+
+.products .form-icon {
+  color: #ADD8E6;
+  text-shadow: 0 0.5vw #00008b;
+}
+
+.orders .form-icon {
+  color: #97BC62FF;
+  text-shadow: 0 0.5vw #2C5F2D;
+}
+
+.feedbacks .form-icon {
+  color: #FCEDDA;
+  text-shadow: 0 0.5vw #EE4E34;
+}
+
+.admin-form h2 {
+  margin-top: 1vw;
+  width: 100%;
+  text-align: center;
+  font-size: 1vw;
+  font-weight: 700;
+
+}
+
+.add {
+  margin: 0 5vw 0 auto;
+  background-color: gold;
+  padding: 0.2vw 3vw;
+  border-radius: 59vw;
+  border-color: white;
+  border-width: 2vw;
+  transition: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.add h3 {
+  font-size: 1.5vw;
+  font-weight: 600;
+}
+
+.add:hover {
+  background-color: orange;
+}
+
+.form-field {
+  border: none;
+  border-bottom: 2px solid;
+  background: none;
+  padding: 10px;
+  padding-left: 24px;
+  font-size: 2vw;
+  font-weight: 700;
+  width: 80vw;
+  transition: .2s;
+}
+
+.form-field:active,
+.form-field:focus,
+.form-field:hover {
+  border-color: #6A679E;
+  outline: none;
+}
+
+textarea {
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+}
+
+textarea:active,
+textarea:focus,
+textarea:hover {
+  outline: none;
+  /* background-color: #6A679E; */
+}
+
+
+textarea[name="name"] {
+  width: 80vw;
+  min-height: 6vw;
+  height: 6vw;
+  max-height: 10vw;
+  padding: 1vw 2vw;
+  font-size: 2vw;
+  resize: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+div[class="form"] {
+  width: 100%;
+}
+
+div[class="form"] form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4vw;
+  margin-top: 5vw;
+}
+
+textarea[name="desc"] {
+  width: 80vw;
+  height: 25vw;
+  max-height: 35vw;
+  min-height: 15vw;
+  padding: 1vw 2vw;
+  font-size: 2vw;
+  resize: none;
+  font-family: 'Roboto Slab', sans-serif;
+}
+
+button[name="addproduct"] {
+  border-radius: 1.5vw;
+  padding: 1vw 2vw;
+  font-size: 2vw;
+  color: white;
+  background: rgb(69, 17, 124);
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+button[name="addproduct"]:hover {
+  background-color: darkblue;
+}
+
+.choose {
+  display: flex;
+  gap: 5vw;
+}
+
+.choose p {
+  font-family: sans-serif;
+}
+
+.cards {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1vw;
+}
+
+.card {
+  width: 90vw;
+  display: flex;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  padding: 0.6vw;
+}
+
+.card img {
+  width: 24vw;
+  height: 18vw;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    padding: 1vw 0 0 2vw;
+    gap: 1vw;
+}
+
+.info h1 {
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 2.5vw;
+}
+
+.info h2 {
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 2vw;
+}
+
+.info h3 {
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 1.5vw;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 2vw 0 auto;
+  gap: 2vw;
+}
+
+.buttons .edit {
+  border-radius: 1.5vw;
+  padding: 0.5vw 2vw;
+  font-size: 1.5vw;
+  color: white;
+  background: rgb(9, 70, 8);
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons .delete {
+  border-radius: 1.5vw;
+  padding: 0.5vw 2vw;
+  font-size: 1.5vw;
+  color: white;
+  background: rgb(170, 59, 8);
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Roboto+Slab&display=swap');
+
+* {
+     padding: 0;
+     margin: 0;
+     font-family: 'EB Garamond', serif;
+}
+
+.hero-title {
+    font-size: 47px;
+    font-weight: 700;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(45deg, #434343 0%, black 100%);
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#email {
+    padding: 16px;
+    width: 600px;
+    border-radius: 40px;
+    max-width: 80vw;
+    border: none;
+    font-size: 20px;
+    color: black;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5vh;
+    margin: 5vh 0;
+}
+
+#continue1, #continue2, #resister, #login {
+    border-radius: 11px;
+    padding: 6px 20px;
+    font-size: 24px;
+    color: white;
+    background: rgb(17, 44, 124);
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-arrow-right {
+    margin-left: 8px;
+}
+
+/* .otp {
+    display: flex;
+    width: 556px;
+    max-width: 90vw;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9px;
+    background: black;
+    
+} */
+
+.form-field {
+	border: none;
+	border-bottom: 2px solid;
+	background: none;
+	padding: 10px;
+	padding-left: 24px;
+	font-weight: 700;
+	width: 300px;
+    max-width: 90vw;
+	transition: .2s;
+}
+
+.form-field:active,
+.form-field:focus,
+.form-field:hover {
+	border-color: #6A679E;
+	outline: none;
+}
+
