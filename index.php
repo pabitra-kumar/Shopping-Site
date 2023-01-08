@@ -38,6 +38,8 @@ require "otp.php";
         <button type="submit" name="continue1" class="transition ease-in-out  hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer " id="continue1">continue
             <i class="fa-sharp fa-solid fa-arrow-right "></i>
         </button>
+        <!-- <hr class="break"> -->
+        <h3> Are you a admin? <a href="Admin/adminauth.php" class="adminlink">Click here</a> </h3>
     </form>
 
 

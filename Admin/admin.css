@@ -225,7 +225,8 @@ textarea[name="desc"] {
   font-family: 'Roboto Slab', sans-serif;
 }
 
-button[name="addproduct"] {
+button[name="addproduct"],
+button[name="editproduct"] {
   border-radius: 1.5vw;
   padding: 1vw 2vw;
   font-size: 2vw;
