@@ -62,4 +62,148 @@ nav {
   color: white;
 }
 
+.fa-right-from-bracket {
+  font-size: 3vw;
+  
+}
+
+button[name="logout"]
+{
+  margin: 0 0 0 2vw;
+}
+
+.cards {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1vw;
+}
+
+.card {
+  width: 90vw;
+  display: flex;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  padding: 0.6vw;
+}
+
+.card img {
+  width: 24vw;
+  height: 18vw;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    padding: 1vw 0 0 2vw;
+    gap: 1vw;
+}
+
+.info h1 {
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 2.5vw;
+}
+
+.info h2 {
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 2vw;
+}
+
+.info h3 {
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 1.5vw;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 2vw 0 auto;
+  gap: 2vw;
+}
+
+.buttons .buy {
+  border-radius: 1.5vw;
+  padding: 0.5vw 2vw;
+  font-size: 1.5vw;
+  color: white;
+  background-color: chocolate;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons .buy:hover {
+  background: gold;
+}
+
+textarea[name="addrs"] {
+  width: 80vw;
+  height: 25vw;
+  max-height: 35vw;
+  min-height: 15vw;
+  padding: 1vw 2vw;
+  font-size: 2vw;
+  resize: none;
+  font-family: 'Roboto Slab', sans-serif;
+}
+
+textarea {
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+}
+
+textarea:active,
+textarea:focus,
+textarea:hover {
+  outline: none;
+  /* background-color: #6A679E; */
+}
+
+.form-field {
+  border: none;
+  border-bottom: 2px solid;
+  background: none;
+  padding: 10px;
+  padding-left: 24px;
+  font-size: 2vw;
+  font-weight: 700;
+  width: 80%;
+  transition: .2s;
+}
+
+.form-field:active,
+.form-field:focus,
+.form-field:hover {
+  border-color: #6A679E;
+  outline: none;
+}
+
+
+button[name="placeorder"] {
+  border-radius: 1.5vw;
+  padding: 1vw 2vw;
+  font-size: 2vw;
+  color: white;
+  background: rgb(69, 17, 124);
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.form-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2vw;
+}
 

@@ -190,6 +190,7 @@ if(isset($_GET["log"]))
     {
         $sql3 = "INSERT INTO `curr_users` (`email`, `date`) VALUES ('$id', current_timestamp());";
         $con->query($sql3);
+        // header("Location: index.php?success");
         $auth = true;
     }
     else

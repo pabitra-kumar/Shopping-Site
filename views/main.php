@@ -15,35 +15,36 @@ require "./mainpage.php";
     <script src="https://kit.fontawesome.com/96020ab7db.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
     <title>Document</title>
-    <script>
-        // Function For Logout
-        function logout() {
-            <?php logout();  ?>
-            location = "../index.php";
-        }
 
-        
-    </script>
 
 </head>
 
 <body>
-    <nav>
-        <div class="main-logo cursor-pointer">
-            <img src="../assets/logo.png" alt="logo">
-        </div>
-
-        <div class="profile-tab group cursor-pointer">
-            <div class="profile-menu hidden group-hover:flex dropdown">
-                <a class="profile-link link"> profile </a>
-                <a class="setting-link link"> Setting </a>
-                <a class="logout link" onclick="logout()"> Logout </a>
+    <?php require "nav.php"; ?>
+    <div class="cards">
+        <?php foreach ($products as $product) {  ?>
+            <div class="card">
+                <img src="../Admin/products/<?php echo $product["filename"]; ?>" alt="image here">
+                <div class="info">
+                    <h2> <?php echo $product["name"]; ?> </h2>
+                    <h1>
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
+                        <?php echo $product["price"]; ?>
+                    </h1>
+                    <h3>
+                        Quantity Available: <?php echo $product["quantity"]; ?>
+                    </h3>
+                </div>
+                <div class="buttons">
+                <form action="buy.php" method="get">
+                        <input type="text" name="id" style="display: none;" value="<?php echo $product["id"]; ?>">
+                        <button type="submit" name="buy" class="buy transition ease-in-out  hover:-translate-y-1 hover:scale-110 duration-300">Buy Now</button>
+                    </form>
+                    
+                </div>
             </div>
-            <i class="fa-solid fa-user profile-icon"></i>
-        </div>
-
-    </nav>
-
+        <?php } ?>
+    </div>
 </body>
 
 </html>
