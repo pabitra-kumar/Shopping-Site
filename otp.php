@@ -13,6 +13,7 @@ $id = "kk";
 $registered = false;
 $otpsent = false;
 $verified = false;
+$wrongemail = false;
 $wrongotp = false;
 $wrongusername = false;
 $wrongname = false;
@@ -23,62 +24,65 @@ $auth = false;
 
 $query = "select * from curr_users;";
 require "config/dbget.php";
-if($posts != null)
-{
+if ($posts != null) {
     $auth = true;
 }
 
 if (isset($_GET["continue1"])) {
     $id = $_GET["email"];
+    if ($id != null) {
+        $mail = new PHPMailer(true);
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'goldenshop.goldenshop.shop@gmail.com';
+        $mail->Password = 'kysozdgrknkzvejs';
+        $mail->SMTPSecure = 'ssl';
+        $mail->Port = 465;
+
+        $mail->setFrom('goldenshop.goldenshop.shop@gmail.com');
+
+        $mail->addAddress($id);
+
+        $mail->isHTML(true);
+
+        $mail->Subject = "OTP Verification";
+
+        $num =  rand(100000, 999999);
+
+        $mail->Body = "OTP for registering on our site is : <br> <br> $num";
 
 
-    $mail = new PHPMailer(true);
-    $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com';
-    $mail->SMTPAuth = true;
-    $mail->Username = 'goldenshop.goldenshop.shop@gmail.com';
-    $mail->Password = 'kysozdgrknkzvejs';
-    $mail->SMTPSecure = 'ssl';
-    $mail->Port = 465;
+        $query = "select * from dummy where email = '$id';";
+        require "config/dbget.php";
 
-    $mail->setFrom('goldenshop.goldenshop.shop@gmail.com');
-
-    $mail->addAddress($id);
-
-    $mail->isHTML(true);
-
-    $mail->Subject = "OTP Verification";
-
-    $num =  rand(100000, 999999);
-    
-    $mail->Body = "OTP for registering on our site is : <br> <br> $num";
-
-
-    $query = "select * from dummy where email = '$id';";
-    require "config/dbget.php";
-
-    if ($posts == null) {
-        echo "success";
-        $mail->Send();
-        $sql = "INSERT INTO `dummy` (`email`, `otp`, `registered`) VALUES ('$id',$num,0);";
-        $con->query($sql);
-        $otpsent = true;
-        $registered = false;
-        $verified = false;
-    } else {
-        if ($posts[0]['registered'] == 1) {
-            $registered = true;
-            $otpsent = false;
-            $verified = false;
-        } else {
+        if ($posts == null) {
             echo "success";
             $mail->Send();
-            $sql = "UPDATE `dummy` SET `otp` = '$num' WHERE `dummy`.`email` = '$id';";
+            $sql = "INSERT INTO `dummy` (`email`, `otp`, `registered`) VALUES ('$id',$num,0);";
             $con->query($sql);
             $otpsent = true;
             $registered = false;
             $verified = false;
+        } else {
+            if ($posts[0]['registered'] == 1) {
+                $registered = true;
+                $otpsent = false;
+                $verified = false;
+            } else {
+                echo "success";
+                $mail->Send();
+                $sql = "UPDATE `dummy` SET `otp` = '$num' WHERE `dummy`.`email` = '$id';";
+                $con->query($sql);
+                $otpsent = true;
+                $registered = false;
+                $verified = false;
+            }
         }
+    }
+    else
+    {
+        $wrongemail = true;
     }
 }
 mysqli_close($con);
@@ -179,29 +183,24 @@ mysqli_close($con);
 <?php
 require "config/db.php";
 
-if(isset($_GET["log"]))
-{
+if (isset($_GET["log"])) {
     $id = $_GET["email"];
     $pass = $_GET["pass"];
     $query = "select * from users where email = '$id';";
     require "config/dbget.php";
 
-    if($posts[0]['password'] == $pass)
-    {
+    if ($posts[0]['password'] == $pass) {
         $sql3 = "INSERT INTO `curr_users` (`email`, `date`) VALUES ('$id', current_timestamp());";
         $con->query($sql3);
         // header("Location: index.php?success");
         $auth = true;
-    }
-    else
-    {
+    } else {
         $auth = false;
         $registered = true;
         $otpsent = false;
         $verified = false;
         $wrongpass = true;
     }
-
 }
 
 mysqli_close($con);

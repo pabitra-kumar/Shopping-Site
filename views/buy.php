@@ -2,11 +2,28 @@
 
 require "./mainpage.php";
 require "../config/db.php";
+$buy = false;
 $id = $_GET["id"];
 $query = "select * from products where id = '$id';";
 require "../config/dbget.php";
 $product = $posts;
+if(isset($_POST["placeorder"]))
+{
+    $ordid = uniqid("",true);
+    
+    $query = "select * from curr_users;";
+    require "../config/dbget.php";
+    $id = $posts[0]["email"];
 
+    $prodid = $_POST["id"];
+    $quantity = $_POST["quantity"];
+    $addrs = $_POST["addrs"];
+    $sql = "INSERT INTO `orders` (`ordid`, `id`, `prodid`, `quantity`, `addrs`, `rate`, `comment`, `date`, `delivered`) VALUES ('$ordid', '$id', '$prodid', '$quantity', '$addrs', NULL, NULL, current_timestamp(), '0');";
+    $con->query($sql);
+    $sql = "update products set quantity = (quantity-$quantity) where id = '$prodid';";
+    $con->query($sql);
+    $buy = true;
+}
 mysqli_close($con);
 ?>
 
@@ -21,14 +38,18 @@ mysqli_close($con);
     <script src="https://kit.fontawesome.com/96020ab7db.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
     <title>Document</title>
-
+    <?php if($buy) { ?>
+        <script>
+            location = "main.php";
+        </script>
+        <?php } ?>
 
 </head>
 
 <body>
     <?php require "nav.php"; ?>
     <div class="cards">
-        <form action="main.php" method="post">
+        <form action="buy.php" method="post">
             <div class="card">
                 <div class="form-main">
                     <div class="img-info flex">

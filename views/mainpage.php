@@ -34,6 +34,10 @@ $query = "select * from products;";
 require "../config/dbget.php";
 $products = $posts;
 
+$query = "select * from orders;";
+require "../config/dbget.php";
+$orders = $posts;
+
 mysqli_close($con);
 ?>
 

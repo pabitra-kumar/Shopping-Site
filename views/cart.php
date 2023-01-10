@@ -2,17 +2,10 @@
 
 require "./mainpage.php";
 require "../config/db.php";
-
-if (isset($_POST["addcart"])) {
-    $prodid = $_POST["id"];
-    $sql = "update products set cart = '1' where id = '$prodid';";
-    $con->query($sql);
-    $query = "select * from products;";
-    require "../config/dbget.php";
-    $products = $posts;
-}
-
-$con->close();
+$query = "select * from products where cart = '1';";
+require "../config/dbget.php";
+$products = $posts;
+$con -> close();
 ?>
 
 <!DOCTYPE html>
@@ -59,19 +52,6 @@ $con->close();
 
                     <?php
                     } ?>
-                    <?php if ($product["cart"] == 0) { ?>
-                        <form action="main.php" method="post">
-                            <input type="text" name="id" style="display: none;" value="<?php echo $product["id"]; ?>">
-                            <button type="submit" name="addcart" class="addcart transition ease-in-out  hover:-translate-y-1 hover:scale-110 duration-300">Add to Cart</button>
-                        </form>
-                    <?php } else { ?>
-                        <div class="desc">
-                            <h3 class="text-zinc-500">Added to cart</h3>
-                        </div>
-
-                    <?php
-                    } ?>
-
                 </div>
             </div>
         <?php } ?>

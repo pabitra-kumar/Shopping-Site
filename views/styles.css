@@ -50,6 +50,7 @@ nav {
   border-top-right-radius: 0;
   top: 6vw;
   right: 0;
+  overflow: hidden;
   background-color: darkseagreen;
 }
 
@@ -108,12 +109,12 @@ button[name="logout"]
   font-size: 2.5vw;
 }
 
-.info h2 {
+.info h2, .desc h2 {
   font-family: 'Roboto Slab', sans-serif;
   font-size: 2vw;
 }
 
-.info h3 {
+.info h3, .desc h3 {
   font-family: 'Roboto Slab', sans-serif;
   font-size: 1.5vw;
 }
@@ -126,7 +127,7 @@ button[name="logout"]
   gap: 2vw;
 }
 
-.buttons .buy {
+.buttons .buy, .buttons .addcart {
   border-radius: 1.5vw;
   padding: 0.5vw 2vw;
   font-size: 1.5vw;
@@ -138,7 +139,7 @@ button[name="logout"]
   align-items: center;
 }
 
-.buttons .buy:hover {
+.buttons .buy:hover, .buttons .addcart:hover {
   background: gold;
 }
 

@@ -34,8 +34,12 @@ require "otp.php";
 
 
     <form action="index.php" id="form1" method="get" style="display: <?php echo (($registered || $otpsent || $verified) ? "none" : "flex"); ?>;">
-        <input type="email" name="email" placeholder="Enter your Email" id='email'>
-        <button type="submit" name="continue1" class="transition ease-in-out  hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer " id="continue1">continue
+        <div class="email flex flex-col items-center">
+            <input type="email" name="email" placeholder="Enter your Email" id='email'>
+            <p class="text-red-700 text-xl" style="display :<?php echo ($wrongemail ? "flex" : "none"); ?>;">
+                Invalid Email</p>
+        </div>
+        <button type="submit" name="continue1" class="transition ease-in-out  hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer " id="continue1">Get Started
             <i class="fa-sharp fa-solid fa-arrow-right "></i>
         </button>
         <!-- <hr class="break"> -->
@@ -91,11 +95,11 @@ require "otp.php";
 
     <form action="index.php" method="get" id="form4" style="display: <?php echo ($registered ? "flex" : "none");  ?>">
         <div class="flex justify-center items-center flex-col">
-        <input type="password" name="pass" class="form-field" placeholder="Enter Password" style="border-bottom-color :<?php echo ($wrongpass ? "red" : "#D1D1D4"); ?>;">
+            <input type="password" name="pass" class="form-field" placeholder="Enter Password" style="border-bottom-color :<?php echo ($wrongpass ? "red" : "#D1D1D4"); ?>;">
             <p class="text-red-700 text-xl" style="display :<?php echo ($wrongpass ? "flex" : "none"); ?>;">
                 Password not matched</p>
         </div>
-        <input type="email" name="email" value= "<?php echo ($registered ? $_GET["email"] : "none");  ?>"  style="display: none;">
+        <input type="email" name="email" value="<?php echo ($registered ? $_GET["email"] : "none");  ?>" style="display: none;">
         <button type="submit" name="log" class="transition ease-in-out  hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 cursor-pointer" id="login"> Login
             <i class="fa-sharp fa-solid fa-arrow-right "></i>
         </button>

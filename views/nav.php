@@ -7,7 +7,8 @@
             <div class="profile-menu hidden group-hover:flex dropdown">
                 <a class="profile-link link"> profile </a>
                 <a class="setting-link link"> Setting </a>
-                <a class="orders-link link" onclick="order()"> My Orders </a>
+                <a class="orders-link link" onclick="order()"> Your Orders </a>
+                <a class="cart-link link" onclick="cart()"> Your Cart </a>
             </div>
             <i class="fa-solid fa-user profile-icon"></i>
 
@@ -32,5 +33,10 @@
         function home()
         {
             location = "main.php";
+        }
+
+        function cart()
+        {
+            location = "cart.php";
         }
     </script>

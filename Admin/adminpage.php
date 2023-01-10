@@ -38,7 +38,7 @@ if (isset($_POST["addproduct"])) {
         $wrongimg = true;
     }
 
-    $sql = "insert into products values('$id', '$name', $price, '$desc', $quantity, '$fileNameNew');";
+    $sql = "insert into products values('$id', '$name', $price, '$desc', $quantity, '$fileNameNew', '0');";
     $con->query($sql);
 }
 
