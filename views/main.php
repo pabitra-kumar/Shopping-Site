@@ -2,14 +2,14 @@
 
 require "./mainpage.php";
 require "../config/db.php";
-
+$atcart = false;
 if (isset($_POST["addcart"])) {
     $prodid = $_POST["id"];
-    $sql = "update products set cart = '1' where id = '$prodid';";
+    $sql = "insert into cart (prodid,email) values('$prodid','$id')";
     $con->query($sql);
-    $query = "select * from products;";
-    require "../config/dbget.php";
-    $products = $posts;
+    // $query = "select * from products;";
+    // require "../config/dbget.php";
+    // $products = $posts;
 }
 
 $con->close();
@@ -60,7 +60,23 @@ $con->close();
                     <?php
                     } ?>
                     <?php
-                     if ($product["cart"] == 0) { ?>
+                    require "../config/db.php";
+                    $prodid = $product['id'];
+                    $query = "select * from cart;";
+                    require "../config/dbget.php";
+                    $carts = $posts;
+                    foreach($carts as $cart)
+                    {
+                        if($cart['email'] == $id && $cart['prodid'] == $prodid)
+                        {
+                            $atcart = true;
+                            break;
+                        }
+                    }
+                    $con -> close();
+                     ?>
+                    <?php
+                     if ($atcart == false) { ?>
                         <form action="main.php" method="post">
                             <input type="text" name="id" style="display: none;" value="<?php echo $product["id"]; ?>">
                             <button type="submit" name="addcart" class="addcart transition ease-in-out  hover:-translate-y-1 hover:scale-110 duration-300">Add to Cart</button>
@@ -75,7 +91,7 @@ $con->close();
 
                 </div>
             </div>
-        <?php } ?>
+        <?php $atcart = false; } ?>
     </div>
 </body>
 

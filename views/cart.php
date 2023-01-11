@@ -2,9 +2,9 @@
 
 require "./mainpage.php";
 require "../config/db.php";
-$query = "select * from products where cart= '1';";
+$query = "select * from cart where email = '$id';";
 require "../config/dbget.php";
-$products = $posts;
+$carts = $posts;
 $con -> close();
 ?>
 
@@ -26,7 +26,13 @@ $con -> close();
 <body>
     <?php require "nav.php"; ?>
     <div class="cards">
-        <?php foreach ($products as $product) {  ?>
+        <?php foreach ($carts as $cart) { 
+            require "../config/db.php";
+            $query = "select * from products where id = '$cart[prodid]';";
+            require "../config/dbget.php";
+            $product = $posts[0];
+            $con -> close();
+             ?>
             <div class="card ">
                 <img src="../Admin/products/<?php echo $product["filename"]; ?>" alt="image here">
                 <div class="info">
