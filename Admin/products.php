@@ -31,16 +31,16 @@
                     </h3>
                 </div>
                 <div class="buttons">
-                <form action="edit.php" method="get">
+                    <form action="edit.php" method="get">
                         <input type="text" name="id" style="display: none;" value="<?php echo $product["id"]; ?>">
                         <button type="submit" name="edit" class="edit transition ease-in-out  hover:-translate-y-1 hover:scale-110 duration-300">Edit</button>
                     </form>
-                    <form action="products.php" method="post">
+                    <!-- <form action="products.php" method="post">
                         <input type="text" name="id" style="display: none;" value="<?php echo $product["id"]; ?>">
                     <button type="submit" name="delete" class="delete transition ease-in-out  hover:-translate-y-1 hover:scale-110 duration-300">delete</button>
-                    </form>
-                    
-                    
+                    </form> -->
+
+
                 </div>
             </div>
         <?php } ?>

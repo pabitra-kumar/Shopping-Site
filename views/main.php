@@ -32,6 +32,11 @@ $con->close();
 
 <body>
     <?php require "nav.php"; ?>
+    <!-- <div class="sub-nav">
+        <button class="filter" name="filter">
+            filter
+        </button>
+    </div> -->
     <div class="cards">
         <?php foreach ($products as $product) {  ?>
             <div class="card ">
