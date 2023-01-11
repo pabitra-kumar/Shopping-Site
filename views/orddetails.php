@@ -42,6 +42,9 @@ $con->close();
                         <i class="fa-solid fa-indian-rupee-sign"></i>
                         <?php echo $product["price"]; ?>
                     </h1>
+                    <h3>
+                    <?php echo $order["date"]; ?>
+                    </h3>
 
                 </div>
             </div>

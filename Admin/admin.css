@@ -329,3 +329,19 @@ button[name="addproduct"]:hover {
   justify-content: center;
   align-items: center;
 }
+
+.buttons .delivered {
+  border-radius: 1.5vw;
+  padding: 0.5vw 2vw;
+  font-size: 1.5vw;
+  color: white;
+  background-color: chocolate;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons .delivered:hover {
+  background: gold;
+}

@@ -34,7 +34,7 @@ $query = "select * from products;";
 require "../config/dbget.php";
 $products = $posts;
 
-$query = "select * from orders;";
+$query = "select * from orders order by date desc;";
 require "../config/dbget.php";
 $orders = $posts;
 

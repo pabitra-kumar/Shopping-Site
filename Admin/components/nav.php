@@ -10,7 +10,7 @@
                 <a class="profile-link link"> Profile </a>
                 <a class="setting-link link"> Setting </a>
                 <a class="products-link link" onclick="product()"> Products </a>
-                <a class="orders-link link"> Orders </a>
+                <a class="orders-link link" onclick="orders()"> Orders </a>
                 <a class="feedbacks-link link"> Feedbacks </a>
                 <a class="logout link" onclick="logout()"> Logout </a>
             </div>
@@ -31,6 +31,10 @@
 
         function add() {
             location= "addproduct.php";
+        }
+
+        function orders() {
+            location= "orders.php";
         }
 
     </script>

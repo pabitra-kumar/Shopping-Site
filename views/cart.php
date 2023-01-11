@@ -2,7 +2,7 @@
 
 require "./mainpage.php";
 require "../config/db.php";
-$query = "select * from products where cart = '1';";
+$query = "select * from products where cart= '1';";
 require "../config/dbget.php";
 $products = $posts;
 $con -> close();

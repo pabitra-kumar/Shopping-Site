@@ -59,7 +59,8 @@ $con->close();
 
                     <?php
                     } ?>
-                    <?php if ($product["cart"] == 0) { ?>
+                    <?php
+                     if ($product["cart"] == 0) { ?>
                         <form action="main.php" method="post">
                             <input type="text" name="id" style="display: none;" value="<?php echo $product["id"]; ?>">
                             <button type="submit" name="addcart" class="addcart transition ease-in-out  hover:-translate-y-1 hover:scale-110 duration-300">Add to Cart</button>
