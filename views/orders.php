@@ -21,8 +21,6 @@ $con->close();
     <script src="https://kit.fontawesome.com/96020ab7db.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
     <title>Document</title>
-
-
 </head>
 
 <body>
@@ -39,10 +37,10 @@ $con->close();
                 <div class="card <?php echo ($order['delivered'] == 0)?("bg-yellow-100"):("bg-green-300"); ?>">
                     <img src="../Admin/products/<?php echo $product[0]["filename"]; ?>" alt="image here">
                     <div class="info">
-                        <h2> <?php echo $product[0]["name"]; ?> </h2>
+                        <h2> <?php echo $order["name"]; ?> </h2>
                         <h1>
                             <i class="fa-solid fa-indian-rupee-sign"></i>
-                            <?php echo $product[0]["price"]; ?>
+                            <?php echo $order["price"]; ?>
                         </h1>
                         <h3>
                             Status: <?php if ($order['delivered'] == 0) {

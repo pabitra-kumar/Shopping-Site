@@ -37,10 +37,10 @@ $con->close();
             <div class="flex">
                 <img src="../Admin/products/<?php echo $product["filename"]; ?>" alt="image here">
                 <div class="info">
-                    <h2> <?php echo $product["name"]; ?> </h2>
+                    <h2> <?php echo $order["name"]; ?> </h2>
                     <h1>
                         <i class="fa-solid fa-indian-rupee-sign"></i>
-                        <?php echo $product["price"]; ?>
+                        <?php echo $order["price"]; ?>
                     </h1>
                     <h3>
                     <?php echo $order["date"]; ?>

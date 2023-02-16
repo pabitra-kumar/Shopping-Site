@@ -16,9 +16,11 @@ if(isset($_POST["placeorder"]))
     $id = $posts[0]["email"];
 
     $prodid = $_POST["id"];
+    $name = $_POST["name"];
+    $price = $_POST["price"];
     $quantity = $_POST["quantity"];
     $addrs = $_POST["addrs"];
-    $sql = "INSERT INTO `orders` (`ordid`, `id`, `prodid`, `quantity`, `addrs`, `rate`, `comment`, `date`, `delivered`) VALUES ('$ordid', '$id', '$prodid', '$quantity', '$addrs', NULL, NULL, current_timestamp(), '0');";
+    $sql = "INSERT INTO `orders` (`ordid`, `id`, `prodid`, `name`, `price`, `quantity`, `addrs`, `rate`, `comment`, `date`, `delivered`) VALUES ('$ordid', '$id', '$prodid', '$name', '$price', '$quantity', '$addrs', NULL, NULL, current_timestamp(), '0');";
     $con->query($sql);
     $sql = "update products set quantity = (quantity-$quantity) where id = '$prodid';";
     $con->query($sql);
@@ -56,9 +58,11 @@ mysqli_close($con);
                         <img src="../Admin/products/<?php echo $product[0]["filename"]; ?>" alt="image here">
                         <div class="info">
                             <h2> <?php echo $product[0]["name"]; ?> </h2>
+                            <input type="text" style="display: none;"  name="name" value="<?php echo $product[0]["name"]; ?>">
                             <h1>
                                 <i class="fa-solid fa-indian-rupee-sign"></i>
                                 <?php echo $product[0]["price"]; ?>
+                                <input type="text" style="display: none;"  name="price" value="<?php echo $product[0]["price"]; ?>">
                             </h1>
                             <h3>
                                 Quantity Available: <?php echo $product[0]["quantity"]; ?>

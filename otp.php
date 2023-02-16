@@ -1,12 +1,12 @@
 <?php
 require "config/db.php";
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+// use PHPMailer\PHPMailer\PHPMailer;
+// use PHPMailer\PHPMailer\Exception;
 
-require 'phpmailer/src/Exception.php';
-require 'phpmailer/src/PHPMailer.php';
-require 'phpmailer/src/SMTP.php';
+// require 'phpmailer/src/Exception.php';
+// require 'phpmailer/src/PHPMailer.php';
+// require 'phpmailer/src/SMTP.php';
 
 $num = 4;
 $id = "kk";
@@ -31,12 +31,14 @@ if ($posts != null) {
 if (isset($_GET["continue1"])) {
     $id = $_GET["email"];
     if ($id != null) {
+        require 'PHPMailerAutoload.php';
+
         $mail = new PHPMailer(true);
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
         $mail->Username = 'goldenshop.goldenshop.shop@gmail.com';
-        $mail->Password = 'kysozdgrknkzvejs';
+        $mail->Password = 'lmfzawsqxeudssof';
         $mail->SMTPSecure = 'ssl';
         $mail->Port = 465;
 
@@ -58,6 +60,7 @@ if (isset($_GET["continue1"])) {
 
         if ($posts == null) {
             echo "success";
+            // mail($id,"OTP Verification","OTP for registering on our site is : <br> <br> $num");
             $mail->Send();
             $sql = "INSERT INTO `dummy` (`email`, `otp`, `registered`) VALUES ('$id',$num,0);";
             $con->query($sql);
