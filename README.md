@@ -1,7 +1,7 @@
 # Shopping-Site
 Welocome to My E-commerce Market Place
 
-# Steps to run the site on ypur local System
+## Steps to run the site on ypur local System
 <ol type="i">
 <li> install XAMPP </ol>
 <li> place the whole project in htdocs folder of the XAMPP folder</li>
