@@ -32,7 +32,8 @@ if (isset($_GET["continue1"])) {
     $id = $_GET["email"];
     if ($id != null) {
         require 'PHPMailerAutoload.php';
-
+        require './phpmailer/class.phpmailer.php';
+        require './phpmailer/class.smtp.php';
         $mail = new PHPMailer(true);
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
