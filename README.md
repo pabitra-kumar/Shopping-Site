@@ -3,7 +3,7 @@ Welocome to My E-commerce Market Place
 
 ## Hosted Temporarily
 - I hosted the project but chrome showing the phishing problem.
-- To overcome this go to the <a href="https://ginyard.000webhostapp.com/"> hosted link </a>. then, Details - "visit the unsafe site" link
+- To overcome this go to the <a href="https://ginyard.000webhostapp.com/" target="_blank"> hosted link </a>. then, Details - "visit the unsafe site" link
 - The site is fully secure because, it does not take personal details to operate.
 
 ## Steps to run the site on your local System
