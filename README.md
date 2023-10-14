@@ -1,6 +1,11 @@
 # Shopping-Site
 Welocome to My E-commerce Market Place
 
+## Hosted Temporarily
+- I hosted the projeject but chore showing the phishing problem .
+- To overcome this go to the hosted link. then, Details - "visit the unsafe site" link
+- The site is fully secure because, it does not take personal details to operate.
+
 ## Steps to run the site on your local System
 <ol type="1">
 <li> install XAMPP </li>
